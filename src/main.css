@@ -1,0 +1,138 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.intro-section {
+  background: linear-gradient(90deg, #F9F1E7 0% 67%, #FCF8F3 67% 100%);
+}
+.intro-section header {
+  padding: 10px 0;
+  color: #fff;
+  text-align: center;
+}
+.intro-section header nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+.intro-section header nav ul li {
+  margin: 0 15px;
+}
+.intro-section header nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.hero {
+  background: url("assets/img/hero.jpg") no-repeat center center;
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+  padding: 100px 0;
+}
+.hero h2 {
+  font-size: 2.5em;
+}
+.hero p {
+  font-size: 1.2em;
+}
+
+.products-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 32px;
+  align-items: center;
+  position: relative;
+  height: 553px;
+  overflow: hidden;
+}
+.products-container .product {
+  position: absolute;
+  padding: 0 16px;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  height: inherit;
+  opacity: 1;
+  z-index: 1;
+}
+.products-container .product img {
+  width: 934px;
+  height: inherit;
+  object-fit: cover;
+}
+.products-container .product.current-product {
+  transform: translateX(20%);
+}
+.products-container .product.current-product .product-description {
+  position: absolute;
+  bottom: 40px;
+  right: 66px;
+}
+.products-container .product.current-product .product-description h3 {
+  font-size: 1.5em;
+  color: #333;
+}
+.products-container .product.current-product .product-description p {
+  color: #666;
+}
+.products-container .product.current-product .product-description img {
+  width: 24px;
+  height: 24px;
+}
+.products-container .product.prev-product {
+  transform: translateX(-80%);
+}
+.products-container .product.next-product {
+  transform: translateX(120%);
+}
+
+.product-navigation {
+  text-align: center;
+  margin: 20px 0;
+}
+.product-navigation button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin: 0 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.product-navigation button:hover {
+  background-color: #1a1a1a;
+}
+.product-navigation .indicators {
+  display: inline-block;
+  margin: 0 10px;
+}
+.product-navigation .indicators .indicator {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background-color: #ddd;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+}
+.product-navigation .indicators .indicator.active {
+  background-color: #333;
+}
+
+footer {
+  background-color: #333;
+  padding: 10px 0;
+  color: #fff;
+  text-align: center;
+}
+
+/*# sourceMappingURL=main.css.map */
