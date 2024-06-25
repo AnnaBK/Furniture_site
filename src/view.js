@@ -1,36 +1,28 @@
 class FurnitureView {
     constructor() {
         this.introDescription = document.getElementById('intro-description');
-        this.contentSection = document.getElementById('intro-products');
+        this.carousel = document.getElementById('carousel');
         this.indicatorsSection = document.getElementById('indicators');
     }
 
     renderIntro(intro) {
-        this.introDescription.textContent = intro.title;
-        this.introDescription.textContent = intro.description;
-        this.introDescription.textContent = intro.button;
+        this.introDescription.innerHTML = `
+            <h1>${intro.title}</h1>
+            <p>${intro.description}</p>
+            <button>${intro.button}</button>
+        `
     }
 
-    renderProduct(prevProduct, currentProduct, nextProduct) {
-        this.contentSection.innerHTML = `
-            <div class="products-container">
-                <div class="product prev-product">
-                    <img src="${prevProduct.image}" alt="${prevProduct.title}">
-                </div>
-                <div class="product current-product">
-                    <img src="${currentProduct.image}" alt="${currentProduct.title}">
-                    <div class="product-description">
-                        <h3>${currentProduct.title}</h3>
-                        <p>${currentProduct.description}</p>
-                        <p>${currentProduct.price}</p>
-                        <a href="#"><img src="./img/arrow-link.svg"></a>
-                    </div>
-                </div>
-                <div class="product next-product">
-                    <img src="${nextProduct.image}" alt="${nextProduct.title}">
-                </div>
+    renderProducts(products, currentProductIndex) {
+        const productHTML = products.map((product, index) => `
+            <div class="product ${index === currentProductIndex ? 'current-product' : ''}" data-index="${index}">
+                <img src="${product.image}" alt="${product.title}">
+                <h3>${product.title}</h3>
+                <p>${product.description}</p>
             </div>
-        `;
+        `).join('');
+
+        this.carousel.innerHTML = productHTML;
     }
 
     renderIndicators(products, currentProductIndex) {

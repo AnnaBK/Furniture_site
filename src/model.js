@@ -1,6 +1,7 @@
 class FurnitureModel {
     constructor() {
         this.currentProductIndex = 0;
+        this.imageWidth = 934;
         this.content = {
             intro: {
                 title: "High-Quality Furniture Just For You",
@@ -38,16 +39,6 @@ class FurnitureModel {
 
     getCurrentProduct() {
         return this.content.products[this.currentProductIndex];
-    }
-
-    getPrevProduct() {
-        const prevIndex = (this.currentProductIndex - 1 + this.content.products.length) % this.content.products.length;
-        return this.content.products[prevIndex];
-    }
-
-    getNextProduct() {
-        const nextIndex = (this.currentProductIndex + 1) % this.content.products.length;
-        return this.content.products[nextIndex];
     }
 
     nextProduct() {
